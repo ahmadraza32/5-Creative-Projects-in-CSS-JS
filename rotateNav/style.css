@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    margin: 1rem auto;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background: black;
+    color: #333;
+}
+
+.container{
+    transform-origin: top left;
+    transition: transform .5s linear;
+    margin: auto;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    padding: 50px;
+}
+
+.container .content{
+    max-width: 80vw;
+    margin: auto;
+}
+
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle{
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: all .5s linear;
+}
+
+.circle button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    font-size: 26px;
+    outline: none;
+    color: white;
+}
+
+.circle #open{
+    left: 60%;
+}
+
+.circle #close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+nav{
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+ul li{
+    text-transform: uppercase;
+    color: white;
+    margin: 40px 0;
+    transition: all .5s linear;
+    transform: translateX(-100%);
+}
+
+ul li i{
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+nav ul li + li{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li + li + li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition: all .5s linear;
+}
+
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}
